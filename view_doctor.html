@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .doctor-list {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .doctor {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="home-button">Home</a> <!-- Home Button -->
+    <div class="doctor-list">
+        <h2>Doctors List</h2>
+        {% for doctor in doctors %}
+            <div class="doctor">
+                <strong>Name:</strong> {{ doctor.name }}<br>
+                <strong>Gender:</strong> {{ doctor.gender }}<br>
+                <strong>Disease Expertise:</strong> {{ doctor.disease }}<br>
+                <strong>Contact:</strong> {{ doctor.contact }}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

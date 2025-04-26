@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            margin: 0;
+        }
+        .result-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h2 {
+            color: #333;
+        }
+        .accuracy {
+            font-size: 1.2em;
+            color: #007BFF; /* Change color as needed */
+            margin-top: 10px;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        .view-doctor {
+            padding: 10px 20px;
+            background-color: #28a745; /* Green color for doctor button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Space between buttons */
+        }
+        .view-doctor:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Predicted Disease: {{ disease }}</h2>
+        <div class="accuracy">Accuracy: {{ accuracy | round(2) }}%</div>
+        <a href="/">Go Back</a>
+        <a class="view-doctor" href="/view-doctor">View Doctor</a> <!-- Updated the href -->
+    </div>
+</body>
+</html>

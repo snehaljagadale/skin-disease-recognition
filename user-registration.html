@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/free-vector/medical-healthcare-background-with-cardiograph-line_1017-25757.jpg?t=st=1729692208~exp=1729695808~hmac=1e9c5e52634c0866852d7dd39f6b94ee0434ccd1b1d356e3de6ee860ff3c533a&w=1060'); /* Replace with your image URL */
+            background-size: cover; /* Make the background cover the entire viewport */
+            background-position: center; /* Center the background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            color: white; /* Change text color for better visibility */
+            text-align: center; /* Center the text */
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for form container */
+            padding: 40px; /* Increased padding for height */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+            width: 300px; /* Fixed width for the container */
+        }
+        h1 {
+            margin-bottom: 20px; /* Space between heading and form */
+        }
+        input {
+            display: block;
+            width: 100%; /* Full width */
+            margin: 10px 0; /* Space between inputs */
+            padding: 10px;
+            border-radius: 5px; /* Rounded corners for inputs */
+            border: none; /* Remove default border */
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%; /* Full width */
+        }
+        button:hover {
+            background-color: #45a049; /* Change color on hover */
+        }
+        a {
+            color: white; /* Link color */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>User Registration</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('user_login') }}">Login here</a></p>
+    </div>
+</body>
+</html>
